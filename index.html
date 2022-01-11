@@ -22,36 +22,57 @@
           </span>
           <img src="images/profile.jpg" alt="Fotografia pessoal" />
         </div>
-        <h1>Filipe Mendes</h1>
-        <a href="https://github.com/filipe2m" target="_blank">
+        <h1 id="userName">User Name</h1>
+        <a href="https://github.com/" target="_blank">
           <img src="images/github.svg" alt="Link para o GitHub" />
           filipe2m
         </a>
         <p>Front-end developer in training!</p>
-        <ul>
-          <li>
-            <a href="https://youtube.com" target="_blank">
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a href="https://youtube.com/" target="_blank">
               <img src="images/youtube.svg" alt="Ícone do Youtube" />
             </a>
           </li>
-          <li>
-            <a href="https://facebook.com" target="_blank">
+          <li class="facebook">
+            <a href="https://facebook.com/" target="_blank">
               <img src="images/facebook.svg" alt="Ícone do Facebook" />
             </a>
           </li>
-          <li>
-            <a href="https://instagram.com" target="_blank">
+          <li class="instagram">
+            <a href="https://instagram.com/" target="_blank">
               <img src="images/instagram.svg" alt="Ícone do Instagram" />
             </a>
           </li>
-          <li>
-            <a href="https://twitter.com" target="_blank">
+          <li class="twitter">
+            <a href="https://twitter.com/" target="_blank">
               <img src="images/twitter.svg" alt="Ícone do Twitter" />
             </a>
           </li>
         </ul>
       </div>
     </main>
-    <script></script>
+    <script>
+      const linksSocialMedia = {
+        github: '',
+        youtube: '',
+        facebook: '',
+        instagram: '',
+        twitter: ''
+      }
+
+      function changeSocialMediaLinks() {
+        //document.getElementById('userName').textContent = 'Filipe Mendes'
+        userName.textContent = 'Filipe Mendes'
+
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+          //li.children[0].href += linksSocialMedia[social]
+          li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+        }
+      }
+
+      changeSocialMediaLinks()
+    </script>
   </body>
 </html>
