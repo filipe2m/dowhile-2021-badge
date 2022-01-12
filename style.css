@@ -18,9 +18,10 @@ body {
 }
 
 main {
-  background: url(images/background.svg);
-  width: 375px;
-  height: 812px;
+  background: url(images/background.svg) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
 }
 
 .container {
@@ -86,4 +87,26 @@ ul {
   gap: 0.5rem;
 
   justify-content: center;
+}
+
+@media (min-width: 720px) {
+  /* tablet version styles */
+}
+
+@media (min-width: 960px) {
+  /* desktop version styles */
+  body {
+    --black-background: hsl(240, 6%, 8%);
+
+    background: var(--black-background);
+  }
+
+  main {
+    background: url(images/background-big.svg) no-repeat center/cover;
+    min-height: 820px;
+  }
+
+  .avatar {
+    margin: 14.7rem auto 0;
+  }
 }
